@@ -226,7 +226,15 @@ Kafka is a distributed streaming platform that allows you to publish and subscri
 Kafka maintains topics, which are used to categorize and store records. Each topic can have multiple partitions, and each partition is replicated across multiple Kafka brokers for fault tolerance.
 Kafka brokers handle the storage, distribution, and replication of records.
 Producers publish records to Kafka topics, and consumers subscribe to topics to read records.}
+Check test connection between VM1 WEB and VM2 - Kafka through topic "my_topic":
 
+ 214  curl -X POST -H "Content-Type: application/json" -d '{"topic": "my_topic", "message": "Hello, Kafka!"}' http://localhost:3000/trigger-kafka![image](https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/2bcecd12-2392-4232-8829-78569de0e6d0)
+ That works because we have the server.js running and using the kafkaProducer.js to send kafka messages.
+
+That also works only after the kafka-consumer.sh is started!!!
+![image](https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/3e7b76ce-3644-4c2a-b103-56bde0ac2eb1)
+
+Normally the fucntionality of the whole thing is pointless if we do n ot use it with elasticsearch or prometeus/grafana in order to visualize those messages
 
 
 
