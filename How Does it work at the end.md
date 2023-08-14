@@ -3,7 +3,10 @@ when someone is using the application (playing the game) in ori case, the game (
 
 That happens here in the code:
 <img width="635" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/69c97184-1a4e-4d01-8e81-cd822e6ed824">
+
 <img width="470" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/800c7ddd-0a84-4f24-b249-78cb29ddc67a">
+
+
 In the current case if thet init() function is caled - i.e somebody is playing the game or somebody win the game a SendKafkaMEssage() function is called which imposes the kafka communication through my_topic
 
 Following is happening on the VM2 Kafka Consumer:
