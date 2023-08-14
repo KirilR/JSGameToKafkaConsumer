@@ -228,7 +228,9 @@ Kafka brokers handle the storage, distribution, and replication of records.
 Producers publish records to Kafka topics, and consumers subscribe to topics to read records.}
 Check test connection between VM1 WEB and VM2 - Kafka through topic "my_topic":
 
- 214  curl -X POST -H "Content-Type: application/json" -d '{"topic": "my_topic", "message": "Hello, Kafka!"}' http://localhost:3000/trigger-kafka![image](https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/2bcecd12-2392-4232-8829-78569de0e6d0)
+ 214  curl -X POST -H "Content-Type: application/json" -d '{"topic": "my_topic", "message": "Hello, Kafka!"}' http://localhost:3000/trigger-kafka![image]
+<img width="966" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/19f4642a-7085-49d9-b0cf-dab0396b4b12">
+(https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/2bcecd12-2392-4232-8829-78569de0e6d0)
  That works because we have the server.js running and using the kafkaProducer.js to send kafka messages.
 
 That also works only after the kafka-consumer.sh is started!!!
