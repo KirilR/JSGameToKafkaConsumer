@@ -136,6 +136,36 @@ The kafka messages sent from the front end :
 
 Keep in mind that all those functionalities work because have the communications via ports 3000 and 400 opened in the very beginning:
 <img width="466" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/28c3342a-c959-4da8-a4ab-ee0483ad1389">
+ON THE vm2:
+INSTALLATION OF KAFKA
+1  sudo yum update -y
+   12  wget https://downloads.apache.org/kafka/2.8.0/kafka_2.8.0.tgz
+   13  sudo yum groupinstall "Development Tools"
+   14  sudo wget https://downloads.apache.org/kafka/2.8.0/kafka_2.8.0.tgz
+   15  sudo yum install wget
+   16  sudo wget https://downloads.apache.org/kafka/2.8.0/kafka_2.8.0.tgz
+   17  ping abv.bg
+   18  sudo wget https://downloads.apache.org/kafka/3.5.0/kafka_3.5.0.tgz
+   19  sudo wget https://downloads.apache.org/kafka/3.4.1/kafka_3.4.1.tgz
+   20  sudo yum install java
+   21  java -version
+   22  wget https://archive.apache.org/dist/kafka/3.0.0/kafka_2.13-3.0.0.tgz
+   23  wget https://archive.apache.org/dist/kafka/3.4.1/kafka_2.13-3.4.1.tgz
+   24  sudo wget https://archive.apache.org/dist/kafka/3.4.1/kafka_2.13-3.4.1.tgz
+   25  sudo tar -xzf kafka_2.13-3.4.1.tgz
+   26  sudo mv kafka_2.13-3.4.1 /opt/kafka
+   27  cd /opt/kafka
+Setting up the server.properties where we will set up the kafka to listen on ur private network:192.168.33.11
+ 32  sudo vi config/server.properties
+   33  sudo systemctl restart kafka
+   34  sudo systemctl status kafka
+   35  bin/kafka-server-start.sh config/server.properties
+How the server.properties file looks like:
+listeners=PLAINTEXT://192.168.33.11:9092
+cat /opt/kafka/config/server.properties
+
+Zookeeper instalation - kafka could not work without zookeeper![image](https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/8f719a4f-4b38-40de-acbf-2d691affb6b4)
+
 
 
 
