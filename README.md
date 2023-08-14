@@ -93,6 +93,36 @@ Installation of kafka-node
 130  sudo npm install kafka-node![image](https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/0e7cd97a-cbc9-4200-8857-dc3e10cd5aef)
 
 Once we have nginx installed and set up the JS Piggame is running, we have the Kafka producer set up in the front end  - i.e in the game, that is NOT the best practise, but later the producer could be moved to teh backend and executed via node.js.
+setting u and installing node js, setting up the API connection point which is going to be started with node.js
+135  service nginx start
+  136  sudo service nginx start
+  137  service nginx status
+  138  sudo jps
+  139  sudo yum update
+  140  sudo yum install java-1.8.0-openjdk-devel
+  141  sudo jps
+  142  cd /opt/kafka
+  143  locate kafka
+  144  cd /var/www/html/piggame/starter/
+  145  ls
+  146  cd  node_modules
+  147  ls
+  148  cd kafka-node
+  149  ls
+  150  pwd
+  151  locate kafka-server-start.sh
+  152  pwd
+  153  locate script.js
+  154  sudo vi /vagrant/starter/script.js
+  155  service nginx restart
+  156  sudo service nginx restart
+![image](https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/228ea6cb-1c47-4370-9a4c-724578975bd5)
+
+SO, HOW DOES IT WORK,
+the fornt end is making a POST request to port 4000 which is a HTTP server run by node.js on the VM1 - Web where the http server is listening on port 4000 and also on port 3000 for test purposes.
+Once "taken" the POST request is proceeded from the node.js http server (see file server.js) and with the help of the additional custom module file kafkaProducer.js (which is actually NOT the producer it sned the kafka message to the cosnumer listening on the other side - the second VM - kafka VM2)
+
+
 
 
 
