@@ -165,6 +165,68 @@ listeners=PLAINTEXT://192.168.33.11:9092
 cat /opt/kafka/config/server.properties
 
 Zookeeper instalation - kafka could not work without zookeeper![image](https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/8f719a4f-4b38-40de-acbf-2d691affb6b4)
+Zookeeper instalation - kafka could not work without zookeeper
+71  sudo wget https://dlcdn.apache.org/zookeeper/zookeeper-3.7.1/apache-zookeeper-3.7.1-bin.tar.gz
+   72  tar -xzf apache-zookeeper-3.7.0-bin.tar.gz
+   73  ls
+   74  tar -xzf apache-zookeeper-3.7.1-bin.tar.gz
+   75  sudo tar -xzf apache-zookeeper-3.7.1-bin.tar.gz
+   76  ls
+   77  sudo rm apache-zookeeper-3.7.1-bin
+   78  sudo rm -r apache-zookeeper-3.7.1-bin
+   79  ls
+   80  sudo tar -xzf apache-zookeeper-3.7.1-bin.tar.gz
+   81  ls
+   82  cd zookeeper/apache-zookeeper-3.7.1-bin/conf/
+   83  cd apache-zookeeper-3.7.1-bin
+   84  ls
+   85  cd conf
+   86  ls
+   87  cp zoo_sample.cfg zoo.cfg
+   88  ls
+   89  ls -la
+
+![image](https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/e1d71634-e097-48fe-abaa-fd977299e294)
+See the zoo.cfg configuration file.
+STARTING THE KAFKA AND ZOOKEEPER:
+
+C:\Users\********\Documents\Kiro\KiroNewKafkaTest>vagrant ssh kafka
+Last login: Thu Jul 20 18:12:05 2023 from 10.0.2.2
+[vagrant@kafka-elasticsearch ~]$ sudo /opt/zookeeper/apache-zookeeper-3.7.1-bin/bin/zkServer.sh start
+/bin/java
+ZooKeeper JMX enabled by default
+Using config: /opt/zookeeper/apache-zookeeper-3.7.1-bin/bin/../conf/zoo.cfg
+Starting zookeeper ... STARTED
+[vagrant@kafka-elasticsearch ~]$ sudo nohup /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties > /dev/null 2>&1 &
+[vagrant@kafka-elasticsearch ~]$ sudo /opt/kafka/bin/kafka-console-consumer.sh --bootstrap-server 192.168.33.11:9092 --t
+opic my_topic --group my_consumer_group
+[vagrant@kafka-elasticsearch ~]$ sudo /opt/kafka/bin/kafka-topics.sh --bootstrap-server 192.168.33.11:9092 --list
+__consumer_offsets
+my_topic![image](https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/a73906d9-3a6d-412b-bd38-a0fe9a63a3f9)
+<img width="797" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/7d69d63e-bbb8-45e3-b031-f95ecb0afee2">
+
+Creating the first topic "my_topic"
+8  sudo ./kafka-topics.sh --bootstrap-server 192.168.33.11:9092 --create --topic my_topic --partitions 1 --replication-factor 1![image](https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/5ed67367-14e2-4081-8e21-00c1cde9b7b1)
+''
+NOW ONCE WE HAVE THE KAFKA SERVER AND ZOOKEEPER RUNNING AND ALSO A TOPIC "RUNNING" WE COULD EXPECT THAT A KAFKA MESSAGES COULD BE PROBABLY TRANSFERRED BETWEEN BOTH VMS THROUGH THE ALREADY CREATED TOPIC
+SIMPLE EXPLANATION FOR THE RELATION BETWEEN KAFKA AND ZOOKKEEPER AND WHY ARE THEY BOTH NEEDED:
+
+
+
+{Kafka and ZooKeeper are two distinct components, each with its own role, in a Kafka cluster. They work together to provide a reliable and distributed stream processing platform.
+
+ZooKeeper:
+
+ZooKeeper is a centralized service that is used to manage and coordinate distributed systems. It provides essential functionalities like configuration management, distributed synchronization, leader election, and maintaining metadata about the cluster.
+Kafka uses ZooKeeper for various tasks, such as maintaining a list of available brokers, leader election for partitions, and managing the state of consumers.
+In a Kafka cluster, ZooKeeper helps to ensure the availability, reliability, and consistency of the overall system.
+Kafka:
+
+Kafka is a distributed streaming platform that allows you to publish and subscribe to streams of records. It is designed for high-throughput, fault-tolerant, and scalable data streaming.
+Kafka maintains topics, which are used to categorize and store records. Each topic can have multiple partitions, and each partition is replicated across multiple Kafka brokers for fault tolerance.
+Kafka brokers handle the storage, distribution, and replication of records.
+Producers publish records to Kafka topics, and consumers subscribe to topics to read records.}
+
 
 
 
