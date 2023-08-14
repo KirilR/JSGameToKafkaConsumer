@@ -134,6 +134,8 @@ Also how does it look to check the node.js runnable server.js from the windows h
 The kafka messages sent from the front end :
 <img width="1141" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/fb4e9411-2c3d-4895-99e0-3c0fcf613357">
 
+Keep in mind that all those functionalities work because have the communications via ports 3000 and 400 opened in the very beginning:
+<img width="466" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/28c3342a-c959-4da8-a4ab-ee0483ad1389">
 
 
 
