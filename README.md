@@ -129,6 +129,14 @@ How does it look started:
 How do we check whether the server is running fine from the VM1 - web: we are doing it from the windows host:
 
 <img width="425" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/88abcc91-7ea3-432a-8a43-da64998a61e9">
+Also how does it look to check the node.js runnable server.js from the windows host:
+<img width="324" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/d1a3ffb2-25d4-431e-94ba-3b58e096b131">
+The kafka messages sent from the front end :
+<img width="1141" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/fb4e9411-2c3d-4895-99e0-3c0fcf613357">
+
+
+
+
 
 
 
