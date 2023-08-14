@@ -1,5 +1,11 @@
 AT the end of the day, 
 when someone is using the application (playing the game) in ori case, the game (frontend) is using the API endpoint and is sending POST HTTP request to the HTTP server run by node.js.
+<img width="835" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/65fe1bbe-9992-47ff-a9d5-bf497511298b">
+
+
+
+<img width="266" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/46f9627b-c9da-4959-81d0-77fb61c8cb78">
+
 
 That happens here in the code:
 
@@ -22,7 +28,7 @@ That happens here in the code:
 
 
 
-In the current case if thet init() function is caled - i.e somebody is playing the game or somebody win the game a SendKafkaMEssage() function is called which imposes the kafka communication through my_topic
+In the current case if thet init() function is called - i.e somebody is playing the game or somebody win the game a SendKafkaMEssage() function is called which imposes the kafka communication through my_topic
 
 Following is happening on the VM2 Kafka Consumer:
 
