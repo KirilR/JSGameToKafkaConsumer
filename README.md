@@ -121,6 +121,16 @@ setting u and installing node js, setting up the API connection point which is g
 SO, HOW DOES IT WORK,
 the fornt end is making a POST request to port 4000 which is a HTTP server run by node.js on the VM1 - Web where the http server is listening on port 4000 and also on port 3000 for test purposes.
 Once "taken" the POST request is proceeded from the node.js http server (see file server.js) and with the help of the additional custom module file kafkaProducer.js (which is actually NOT the producer it sned the kafka message to the cosnumer listening on the other side - the second VM - kafka VM2)
+How do we start the HTTP server:
+ 204  sudo node server.js
+![image](https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/b4bde47c-0c5b-4b4d-8a62-dd37779537d2)
+How does it look started:
+<img width="481" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/59dea339-3553-4516-9822-07f5e85e0d25">
+How do we check whether the server is running fine from the VM1 - web: we are doing it from the windows host:
+
+<img width="425" alt="image" src="https://github.com/KirilR/JSGameToKafkaConsumer/assets/7829757/88abcc91-7ea3-432a-8a43-da64998a61e9">
+
+
 
 
 
